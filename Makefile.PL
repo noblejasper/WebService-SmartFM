@@ -1,17 +1,13 @@
-use strict;
-use warnings;
-use ExtUtils::MakeMaker;
+use inc::Module::Install;
 
-WriteMakefile(
-    NAME                => 'Net::SmartFM',
-    AUTHOR              => '<noblejasper> <<nobjas@gmail.com>>',
-    VERSION_FROM        => 'lib/Net/SmartFM.pm',
-    ABSTRACT_FROM       => 'lib/Net/SmartFM.pm',
-    PL_FILES            => {},
-    PREREQ_PM => {
-        'Test::More' => 0,
-        'version'    => 0,
-    },
-    dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean               => { FILES => 'Net-SmartFM-*' },
-);
+name 'Net-SmartFM';
+all_from 'lib/Net/SmartFM.pm';
+
+#requires 'Any::Moose';
+
+build_requires 'Test::More';
+use_test_base;
+auto_include_deps;
+author_tests('xt');
+auto_set_repository;
+WriteAll;
