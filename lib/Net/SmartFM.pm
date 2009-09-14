@@ -22,7 +22,7 @@ __END__
 
 =head1 NAME
 
-Net::SmartFM - [One line description of module's purpose here]
+Net::SmartFM - Perl interface to the http://smart.fm/ API
 
 
 =head1 VERSION
@@ -33,6 +33,9 @@ This document describes Net::SmartFM version 0.0.1
 =head1 SYNOPSIS
 
     use Net::SmartFM;
+    my $api = Net::SmartFM->new(
+        api_key => 'd6bu49h84yj85z2mgnbh5t4j',
+    );
 
 =for author to fill in:
     Brief code example(s) here showing commonest usage(s).
