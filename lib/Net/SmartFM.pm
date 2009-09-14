@@ -3,6 +3,7 @@ package Net::SmartFM;
 use warnings;
 use strict;
 use Carp;
+use 5.008_001;
 
 use version; $VERSION = qv('0.0.3');
 
