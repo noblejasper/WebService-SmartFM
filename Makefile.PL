@@ -1,7 +1,7 @@
 use inc::Module::Install;
 
-name 'Net-SmartFM';
-all_from 'lib/Net/SmartFM.pm';
+name 'WebService-SmartFM';
+all_from 'lib/WebService/SmartFM.pm';
 
 requires 'WebService::Simple';
 

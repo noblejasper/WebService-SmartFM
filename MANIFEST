@@ -2,6 +2,6 @@ Changes
 MANIFEST
 Makefile.PL
 README
-lib/Net/SmartFM.pm
+lib/WebService/SmartFM.pm
 t/00.load.t
 t/01.use.t
