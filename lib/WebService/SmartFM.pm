@@ -2,16 +2,16 @@ package WebService::SmartFM;
 
 =head1 NAME
 
-Net::SmartFM - Perl interface to the http://smart.fm/ API
+WebService::SmartFM - Perl interface to the http://smart.fm/ API
 
 =head1 VERSION
 
-This document describes Net::SmartFM version 0.0.1
+This document describes WebService::SmartFM version 0.0.1
 
 =head1 SYNOPSIS
 
-    use Net::SmartFM;
-    my $api = Net::SmartFM->new(
+    use WebServices::SmartFM;
+    my $api = WebService::SmartFM->new(
         api_key => 'd6bu49h84yj85z2mgnbh5t4j',
     );
     my $user_profile = $api->get('user_profile', 'noblejasper');
@@ -34,7 +34,7 @@ use WebService::Simple;
 
 =item new
 
-    my $api = Net::SmartFM->new(
+    my $api = WebService::SmartFM->new(
         api_key => 'd6bu49h84yj85z2mgnbh5t4j',
     );
 
@@ -133,7 +133,7 @@ No bugs have been reported.
 CODE is here http://github.com/noblejasper/WebService-SmartFM
 
 Please report any bugs or feature requests to
-C<bug-net-smartfm@rt.cpan.org>, or through the web interface at
+C<bug-webservice-smartfm@rt.cpan.org>, or through the web interface at
 L<http://rt.cpan.org>.
 
 
