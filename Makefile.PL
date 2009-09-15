@@ -3,7 +3,7 @@ use inc::Module::Install;
 name 'Net-SmartFM';
 all_from 'lib/Net/SmartFM.pm';
 
-#requires 'Any::Moose';
+requires 'WebService::Simple';
 
 build_requires 'Test::More';
 use_test_base;
