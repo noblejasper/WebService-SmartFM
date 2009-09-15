@@ -130,6 +130,8 @@ L<WebService::Simple>
 
 No bugs have been reported.
 
+CODE is here http://github.com/noblejasper/WebService-SmartFM
+
 Please report any bugs or feature requests to
 C<bug-net-smartfm@rt.cpan.org>, or through the web interface at
 L<http://rt.cpan.org>.
