@@ -4,6 +4,4 @@ Makefile.PL
 README
 lib/Net/SmartFM.pm
 t/00.load.t
-t/perlcritic.t
-t/pod-coverage.t
-t/pod.t
+t/01.use.t

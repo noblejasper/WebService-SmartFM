@@ -1,5 +1,27 @@
 package Net::SmartFM;
 
+=head1 NAME
+
+Net::SmartFM - Perl interface to the http://smart.fm/ API
+
+=head1 VERSION
+
+This document describes Net::SmartFM version 0.0.1
+
+=head1 SYNOPSIS
+
+    use Net::SmartFM;
+    my $api = Net::SmartFM->new(
+        api_key => 'd6bu49h84yj85z2mgnbh5t4j',
+    );
+    my $user_profile = $api->get('user_profile', 'noblejasper');
+
+=head1 METHODS
+
+=over 4
+
+=cut
+
 use warnings;
 use strict;
 use Carp;
@@ -9,6 +31,14 @@ use version; our $VERSION = qv('0.0.3');
 
 use XML::Parser;
 use WebService::Simple;
+
+=item new
+
+    my $api = Net::SmartFM->new(
+        api_key => 'd6bu49h84yj85z2mgnbh5t4j',
+    );
+
+=cut
 
 sub new {
     my ( $self, %args ) = @_;
@@ -20,15 +50,6 @@ sub new {
             param    => { api_key => $args{api_key}, },
         ),
     }, $self;
-}
-
-sub smart_fm {
-    my $self = shift;
-
-    $self->{smart_fm} = WebService::Simple->new(
-        base_url => 'http://api.smart.fm/',
-    ) unless ( $self->{smart_fm} );
-    return $self->{smart_fm};
 }
 
 my $KEYS = {
@@ -53,6 +74,14 @@ my $KEYS = {
     # 'user_study_results' => { sprintf => 'users/%s/study_results', hash_key =>'' },
 };
 
+=item get
+
+get data method
+
+    $api->get('get data type', 'key value')
+
+=cut
+
 sub get {
     my ( $self, $key_name, $value ) = @_;
     my $key = $KEYS->{$key_name};
@@ -67,7 +96,7 @@ sub get {
 }
 sub _get {
     my ( $self, $path, $hash_key ) = @_;
-    my $data = $self->smart_fm->get( $path );
+    my $data = $self->_smart_fm->get( $path );
 
     return $hash_key
         ? $data->parse_response->{$hash_key}
@@ -76,32 +105,20 @@ sub _get {
 
 sub _get_bared {
     my ( $self, $path ) = @_;
-    return $self->smart_fm->get( $path );
+    return $self->_smart_fm->get( $path );
 }
 
+sub _smart_fm {
+    my $self = shift;
 
-
+    $self->{smart_fm} = WebService::Simple->new(
+        base_url => 'http://api.smart.fm/',
+    ) unless ( $self->{smart_fm} );
+    return $self->{smart_fm};
+}
 
 1; # Magic true value required at end of module
 __END__
-
-=head1 NAME
-
-Net::SmartFM - Perl interface to the http://smart.fm/ API
-
-
-=head1 VERSION
-
-This document describes Net::SmartFM version 0.0.1
-
-
-=head1 SYNOPSIS
-
-    use Net::SmartFM;
-    my $api = Net::SmartFM->new({
-        api_key => 'd6bu49h84yj85z2mgnbh5t4j',
-    });
-    $api->execute_request();
 
 =for author to fill in:
     Brief code example(s) here showing commonest usage(s).
