@@ -7,7 +7,7 @@ my $api = WebService::SmartFM->new(
     api_key => 'test',
 );
 isa_ok($api, 'WebService::SmartFM');
-isa_ok($api->smart_fm, 'WebService::Simple');
+isa_ok($api->_smart_fm, 'WebService::Simple');
 
 my $noblejasper = $api->get('user_profile', 'noblejasper');
 check_get_profile( $noblejasper, {

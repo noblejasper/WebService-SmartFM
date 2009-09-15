@@ -1,7 +1,7 @@
 use Test::More tests => 1;
 
 BEGIN {
-use_ok( 'Net::SmartFM' );
+use_ok( 'WebService::SmartFM' );
 }
 
-diag( "Testing Net::SmartFM $Net::SmartFM::VERSION" );
+diag( "Testing WebService::SmartFM $WebService::SmartFM::VERSION" );
