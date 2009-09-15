@@ -27,7 +27,7 @@ use strict;
 use Carp;
 use 5.008_001;
 
-use version; our $VERSION = qv('0.0.3');
+use version; our $VERSION = qv('0.0.4');
 
 use XML::Parser;
 use WebService::Simple;
